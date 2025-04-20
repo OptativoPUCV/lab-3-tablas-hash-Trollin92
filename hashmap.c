@@ -58,8 +58,8 @@ HashMap * createMap(long capacity) {                    //se crea la variable ha
         Hmap->buckets[i] = NULL; // inicializa cada bucket en NULL
     }
     Hmap->size = 0; // No hay ningún par dentro del hashmap, asi que la cant. de buckets es 0
-    Hmap->capacity = capacity // Se asigna la capacidad de la tabla como la variable leida por la función
-    Hmap->current = -1 //petición del ejercicio
+    Hmap->capacity = capacity; // Se asigna la capacidad de la tabla como la variable leida por la función
+    Hmap->current = -1; //petición del ejercicio
     return Hmap;
 }
 
