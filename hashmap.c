@@ -51,9 +51,16 @@ void enlarge(HashMap * map) {
 }
 
 
-HashMap * createMap(long capacity) {
-
-    return NULL;
+HashMap * createMap(long capacity) {                    //se crea la variable hashmap con capacidad = 'capacity'; y la retorna
+    HashMap * Hmap = (HashMap *)malloc(sizeof(HashMap)); //reservar memoria para la creacion de una tabla hashmap
+    Hmap->buckets = (Pair **)malloc(sizeof(Pair *) * capacity); //inicializa buckets al reservar memoria para una cantidad de buckets = capacity
+    for (size_t i = 0; i<capacity; i++) {
+        Hmap->buckets[i] = NULL; // inicializa cada bucket en NULL
+    }
+    Hmap->size = 0; // No hay ningún par dentro del hashmap, asi que la cant. de buckets es 0
+    Hmap->capacity = capacity // Se asigna la capacidad de la tabla como la variable leida por la función
+    Hmap->current = -1 //petición del ejercicio
+    return Hmap;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
