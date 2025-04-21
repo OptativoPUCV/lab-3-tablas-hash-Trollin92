@@ -101,12 +101,9 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
     for (size_t i = 0; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
-        if (map->buckets[i]->key != NULL){
+        if (map->buckets != NULL && map->buckets[i]->key != NULL){
             map->current = i;
             return map->buckets[i];
-        }
-        if (i==(map->capacity)-1) {
-            return NULL;
         }
     }
 }
