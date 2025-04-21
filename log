@@ -262,3 +262,18 @@ Sun, Apr 20, 2025  9:22:04 PM:
  tests:  5|4
 total_score: 30/70
 735b1d3
+Sun, Apr 20, 2025  9:25:03 PM: 
+ hashmap.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'searchMap':
+hashmap.c:90:20: error: 'buckets' undeclared (first use in this function)
+   90 |             return buckets[i];
+      |                    ^~~~~~~
+hashmap.c:90:20: note: each undeclared identifier is reported only once for each function it appears in
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+c9fdd81
