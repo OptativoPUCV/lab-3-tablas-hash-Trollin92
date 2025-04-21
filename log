@@ -491,3 +491,9 @@ hashmap.c:100:1: warning: control reaches end of non-void function [-Wreturn-typ
   100 | }
       | ^
 4d1c23a
+Sun, Apr 20, 2025 10:41:57 PM: 
+ hashmap.c | 13 ++++---------
+ 1 file changed, 4 insertions(+), 9 deletions(-)
+ tests:  13|2
+total_score: 50/70
+b6a423e
