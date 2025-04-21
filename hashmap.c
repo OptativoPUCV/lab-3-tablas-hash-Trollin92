@@ -79,9 +79,9 @@ HashMap * createMap(long capacity) {                    //se crea la variable ha
 void eraseMap(HashMap * map,  char * key) { 
     map->size -=1;                              //actualizamos el size
     long index = hash(key,map->capacity);       // buscamos la ubicacion de la clave
-    for (size_t i = index; i<map->capacity;i++){
-        if(map->buckets[i] == NULL) return;
-        if (is_equal(map->buckets[i]->key,key)){
+    for (size_t i = index; i<map->capacity;i++){ //desde index en adelante buscamos el bucket a anular
+        if(map->buckets[i] == NULL) return;      //si dato no existe, return null
+        if (is_equal(map->buckets[i]->key,key)){ //si encontramos el dato, anulamos su key con null
         map->buckets[i]->key = NULL;
         return;
         }
@@ -100,11 +100,18 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+    for (size_t i = 0; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
+        if (map->buckets[i]->key != NULL){
+            return map->buckets[i];
+        }
+    }
 }
 
 Pair * nextMap(HashMap * map) {
-
-    return NULL;
+    for (size_t i = map->current; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
+        if(map->current == (map->capacity) - 1) i= -1;
+        if (map->buckets[i]->key != NULL){
+            return map->buckets[i];
+        }
+    }
 }
