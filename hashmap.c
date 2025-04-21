@@ -94,7 +94,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         if (map->buckets[i] == NULL) return NULL;//si el bucket es vacio no hace falta seguir buscando
         if (is_equal(map->buckets[i]->key , key)){
             map->current = i;                   // actualizo el current
-            return map->buckets[i];
+            return map->buckets[i];             //retornamos el parsito encontrado
         }
     }
 }
@@ -102,19 +102,20 @@ Pair * searchMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     for (size_t i = 0; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
-            map->current = i;
-            return map->buckets[i];
+            map->current = i;                   //actualizamos el current
+            return map->buckets[i];             //retorna el primer par del array
         }
     }
     return NULL;
 }
 
+
+
 Pair * nextMap(HashMap * map) {
-    for (size_t i = map->current; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
-        if(map->current+1 == (map->capacity)) i= 0;
+    for (size_t i = map->current+1; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
-            map->current = i;
-            return map->buckets[i];
+            map->current = i;                   //actualizamos el current
+            return map->buckets[i];             //retorna el primer par del array
         }
     }
     return NULL;
