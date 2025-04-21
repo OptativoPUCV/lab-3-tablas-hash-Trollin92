@@ -80,9 +80,10 @@ void eraseMap(HashMap * map,  char * key) {
     map->size -=1;                              //actualizamos el size
     long index = hash(key,map->capacity);       // buscamos la ubicacion de la clave
     for (size_t i = index; i<map->capacity;i++){
-        if (is_equal(map->buckets[i]->key,key)) 
+        if (is_equal(map->buckets[i]->key,key)){
         map->buckets[i]->key = NULL;
-        return;
+        break;
+        }
     }
 }
 
