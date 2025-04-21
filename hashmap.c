@@ -120,6 +120,6 @@ Pair * nextMap(HashMap * map) {
             return map->buckets[i];
         }
         i = ( i + 1) %map->capacity;
-    } while(i!=start);                       //si i deja de ser igual a start, break
+    } while(i!=start) return NULL;                       //si i deja de ser igual a start, break
     return NULL;
 }

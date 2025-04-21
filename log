@@ -455,3 +455,22 @@ Sun, Apr 20, 2025 10:38:10 PM:
  tests:  15|2
 total_score: 50/70
 997b922
+Sun, Apr 20, 2025 10:39:45 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'nextMap':
+hashmap.c:123:22: error: expected ';' before 'return'
+  123 |     } while(i!=start) return NULL;                       //si i deja de ser igual a start, break
+      |                      ^~~~~~~
+      |                      ;
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+hashmap.c: In function 'searchMap':
+hashmap.c:100:1: warning: control reaches end of non-void function [-Wreturn-type]
+  100 | }
+      | ^
+0d7fc3c
