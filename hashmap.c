@@ -111,10 +111,11 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     for (size_t i = map->current; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
-        if(map->current == (map->capacity) - 1) i= 0;
+        if(map->current+1 == (map->capacity)) i= 0;
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
             map->current = i;
             return map->buckets[i];
         }
     }
+    return NULL;
 }
