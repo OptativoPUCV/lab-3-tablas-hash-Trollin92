@@ -113,7 +113,7 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     size_t start = (map->current + 1) % map->capacity; // comienza en el indice más cercano
-    size_t i = start                                    // variable para iterar, guardamos el start
+    size_t i = start;                                // variable para iterar, guardamos el start
     do{                                    
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
             map->current = i;
