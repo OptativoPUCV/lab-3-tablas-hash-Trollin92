@@ -191,3 +191,22 @@ Sun, Apr 20, 2025  9:16:32 PM:
  1 file changed, 11 insertions(+), 2 deletions(-)
  tests:  0|0
 74876bc
+Sun, Apr 20, 2025  9:17:49 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'searchMap':
+hashmap.c:91:20: warning: dereferencing 'void *' pointer
+   91 |             Parsito->key = map->buckets[i]->key;
+      |                    ^~
+hashmap.c:91:20: error: request for member 'key' in something not a structure or union
+hashmap.c:92:20: warning: dereferencing 'void *' pointer
+   92 |             Parsito->value = map->buckets[i]->value;
+      |                    ^~
+hashmap.c:92:20: error: request for member 'value' in something not a structure or union
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+5da22a9
