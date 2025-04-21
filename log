@@ -233,3 +233,26 @@ test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     8 | char * _strdup(const char * str) {
       |        ^~~~~~~
 3c691a5
+Sun, Apr 20, 2025  9:21:44 PM: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'searchMap':
+hashmap.c:85:20: error: invalid initializer
+   85 |     Pair Parsito = createPair(NULL,NULL);
+      |                    ^~~~~~~~~~
+hashmap.c:91:20: error: invalid type argument of '->' (have 'Pair')
+   91 |             Parsito->key = map->buckets[i]->key;
+      |                    ^~
+hashmap.c:92:20: error: invalid type argument of '->' (have 'Pair')
+   92 |             Parsito->value = map->buckets[i]->value;
+      |                    ^~
+hashmap.c:94:20: error: incompatible types when returning type 'Pair' but 'Pair *' was expected
+   94 |             return Parsito;
+      |                    ^~~~~~~
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+58458c6

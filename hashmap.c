@@ -88,8 +88,9 @@ Pair * searchMap(HashMap * map,  char * key) {
         if (i==(map->capacity)-1) i = -1;
         if (map->buckets[i] == NULL) return NULL;
         if (is_equal(map->buckets[i]->key , key)){
-            Parsito.key = map->buckets[i]->key;
-            Parsito.value = map->buckets[i]->value;
+            Parsito->key = map->buckets[i]->key;
+            Parsito->value = map->buckets[i]->value;
+            map->current = i;
             return Parsito;
         }
     }
