@@ -165,3 +165,18 @@ Sun, Apr 20, 2025  5:30:35 PM:
  tests:  1|5
 total_score: 10/70
 0cacaec
+Sun, Apr 20, 2025  8:39:23 PM: 
+ hashmap.c | 23 +++++++++++++++--------
+ 1 file changed, 15 insertions(+), 8 deletions(-)
+Compilation failed
+In file included from test.c:4:
+hashmap.c: In function 'insertMap':
+hashmap.c:45:10: error: unknown type name 'sizee_t'; did you mean 'size_t'?
+   45 |     for (sizee_t i = index; i<map->capacity; i++){
+      |          ^~~~~~~
+      |          size_t
+test.c: At top level:
+test.c:8:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+7ed4b4b

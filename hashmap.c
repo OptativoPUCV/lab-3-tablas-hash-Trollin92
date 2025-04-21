@@ -40,14 +40,21 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-    //map->size +=1;
-    //long index = hash(key,map->capacity)
-    //for(size_t i = index; i<map->capacity; i++){
-    //    if (map->buckets[i] == NULL ){
-    //        map->buckets[i] = value;
-    //    }
-    //}
-
+    map->size +=1;
+    long index = hash(key,map->capacity); // calculamos la posicion donde se va a insertar el nuevo par
+    for (sizee_t i = index; i<map->capacity; i++){
+        if (map->buckets[i] == NULL){ //si el bucket está vacío, se inserta el nuevo par
+            map->buckets[i] = createPair(key,value);
+            return;
+        }
+        else if (is_equal(map->buckets[i]->key,key)){ //si el bucket no está vacío, se verifica si la key es igual a la del par ya existente
+            map->buckets[i]->value = value; //si es igual, se reemplaza el valor del par existente por el nuevo valor
+            return;
+        }
+        else if (i == map->capacity-1){ //como es circular, si llega al final del hashmap vuelve al principio
+            i = -1;
+        }
+    }
 }
 
 void enlarge(HashMap * map) {
