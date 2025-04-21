@@ -110,7 +110,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    for (size_t i = map->current; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
+    for (size_t i = map->current+1; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
             map->current = i;                   //actualizamos el current nuevo
             return map->buckets[i];             //retorna el siguiente par valido al current
