@@ -82,14 +82,14 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {
-    Pair *Parsito = createPair(NULL,NULL);
+    Pair Parsito = createPair(NULL,NULL);
     long index = hash(key,map->capacity); // calculamos la posicion donde podría estar el par
     for (size_t i = index; i<map->capacity; i++){
         if (i==(map->capacity)-1) i = -1;
         if (map->buckets[i] == NULL) return NULL;
         if (is_equal(map->buckets[i]->key , key)){
-            Parsito->key = map->buckets[i]->key;
-            Parsito->value = map->buckets[i]->value;
+            Parsito.key = map->buckets[i]->key;
+            Parsito.value = map->buckets[i]->value;
             return Parsito;
         }
     }
