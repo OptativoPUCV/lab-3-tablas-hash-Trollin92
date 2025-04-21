@@ -112,11 +112,14 @@ Pair * firstMap(HashMap * map) {
 
 
 Pair * nextMap(HashMap * map) {
-    for (size_t i = map->current+1; i<map->capacity; i++){    //desde la posicion 0 del array, buscamos hasta encontrar dato valido
+    size_t start = (map->current + 1) % map->capacity; // comienza en el indice más cercano
+    size_t i = start                                    // variable para iterar, guardamos el start
+    do{                                    
         if (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
-            map->current = i;                   //actualizamos el current
-            return map->buckets[i];             //retorna el primer par del array
+            map->current = i;
+            return map->buckets[i];
         }
-    }
+        i = ( i + 1) %map->capacity;
+    } while(i!=start)                       //si i deja de ser igual a start, break
     return NULL;
 }
