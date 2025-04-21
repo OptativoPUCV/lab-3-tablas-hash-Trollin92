@@ -63,8 +63,8 @@ void enlarge(HashMap * map) {
     map->capacity *=2;                         // Duplique el valor de la variable capacity
     map->buckets = (Pair**)malloc(sizeof(Pair*) * map->capacity);   // Asigne a map->buckets un nuevo arreglo con la nueva capacidad
     map->size = 0;                                                  // Inicialice size a 0.
-    for (size_t i = 0; i<map->capacity; i++){  // Inicializando los buckets a NULL  
-        map->buckets = NULL;                                        
+    for (size_t i = 0; i<map->capacity; i++){  // Inicializando los buckets en NULL  
+        map->buckets[i] = NULL;                                        
     }
     for (size_t i = 0; i<map->capacity/2 ; i++){
         if (parsitosViejos[i] != NULL && parsitosViejos[i]->key != NULL){   
